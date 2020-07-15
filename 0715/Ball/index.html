@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Async ball</title>
+        <style>
+            .ball1 {
+                width: 50px;
+                height: 50px;
+                background-color: aqua;
+                border-radius: 50%;
+                transform: translateX(0);
+            }
+            .ball2 {
+                width: 50px;
+                height: 50px;
+                background-color: darkorange;
+                border-radius: 50%;
+                transform: translateX(0);
+            }
+            .ball3 {
+                width: 50px;
+                height: 50px;
+                background-color: slategrey;
+                border-radius: 50%;
+                transform: translateX(0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ball ball1"></div>
+        <div class="ball ball2"></div>
+        <div class="ball ball3"></div>
+        <script>
+            /* eslint-disable */
+            const ball1 = document.querySelector('.ball1');
+            const ball2 = document.querySelector('.ball2');
+            const ball3 = document.querySelector('.ball3');
+
+            // demo 使用时只把相应注释取消就行
+
+            // callback 用法的 demo
+            // function move(ball, target, cb) {
+            //     // TODO
+            //     let val = 0;
+            //     const timer = setInterval(() => {
+            //         if (val <= target) {
+            //             val++;
+            //             ball.style.transform = `translateX(${val}px)`;
+            //         } else {
+            //             cb();
+            //             clearInterval(timer);
+            //         }
+            //     }, 1000 / 60);
+            // }
+            // move(ball1, 100, function () {
+            //     move(ball2, 100, function () {
+            //         move(ball3, 100, function () {
+            //             console.log('over');
+            //         });
+            //     });
+            // });
+
+            // Promise 用法的 demo
+            // function move(ball, target) {
+            //     let timer = null;
+            //     let val = 0;
+            //     return new Promise((resolve, reject) => {
+            //         timer = setInterval(() => {
+            //             if (val <= target) {
+            //                 val++;
+            //                 ball.style.transform = `translateX(${val}px)`;
+            //             } else {
+            //                 resolve();
+            //                 clearInterval(timer);
+            //             }
+            //         }, 1000 / 60);
+            //     });
+            // }
+
+            // move(ball1, 100)
+            //     .then(() => {
+            //         return move(ball2, 100);
+            //     })
+            //     .then(() => {
+            //         return move(ball3, 100);
+            //     })
+            //     .then(() => {
+            //         console.log('over');
+            //     });
+
+            // async/await 用法的 demo
+            // async function go() {
+            //     // TODO
+            //     await move(ball1, 100);
+            //     await move(ball2, 100);
+            //     const promise = move(ball3, 100);
+            //     return promise;
+            // }
+            // go().then(res => {
+            //     console.log(res);
+            // });
+        </script>
+    </body>
+</html>
